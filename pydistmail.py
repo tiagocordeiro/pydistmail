@@ -35,8 +35,8 @@ fvend.close()
 # Salva log de recebimento em csv
 with open('emails.csv', 'a') as fcsv:  # use o path completo
     mailwriter = csv.writer(fcsv)
-    mailwriter.writerow([msg['date'], msg['subject'], msg['from'],
-                         vendedores[proximovendedor][0]])
+    mailwriter.writerow(
+        [msg['date'], msg['from'], vendedores[proximovendedor][0]])
 
 # Encaminha o e-mail para o vendedor da vez.
 s = smtplib.SMTP('localhost')
