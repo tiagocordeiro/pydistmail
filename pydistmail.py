@@ -21,9 +21,9 @@ ultimovendedor = open('ultimovendedor.txt', 'r').read()  # use o path completo
 
 # Determina o próximo vendedor que irá receber e-mail
 if int(ultimovendedor) == totalVendedores - 1:  # Se o ultimo que recebeu, é o
-    proximovendedor = 0  # ultimo da lista, volta para
-else:  # o primeiro da lista.
-    proximovendedor = int(ultimovendedor) + 1  # Se não, pega o próximo.
+    proximovendedor = 0                         # ultimo da lista, volta para
+else:                                           # o primeiro da lista.
+    proximovendedor = int(ultimovendedor) + 1   # Se não, pega o próximo.
 
 davez = str(proximovendedor)
 
@@ -32,10 +32,11 @@ fvend = open('ultimovendedor.txt', 'w')  # use o path completo
 fvend.write(davez)
 fvend.close()
 
-#Salva log de recebimento em csv
-with open('emails.csv', 'a') as fcsv:   # use o path completo
+# Salva log de recebimento em csv
+with open('emails.csv', 'a') as fcsv:  # use o path completo
     mailwriter = csv.writer(fcsv)
-    mailwriter.writerow([msg['date'],msg['subject'],msg['from'],vendedores[proximovendedor][0]])
+    mailwriter.writerow([msg['date'], msg['subject'], msg['from'],
+                         vendedores[proximovendedor][0]])
 
 # Encaminha o e-mail para o vendedor da vez.
 s = smtplib.SMTP('localhost')
