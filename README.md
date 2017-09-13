@@ -42,9 +42,10 @@ s.sendmail("vendas@dominio.com.br", vendedores[proximovendedor][1],
 Done.
 
 TODO:
-* Melhorar a documentação
-* Salvar logs de emails recebidos e distribuidos em um banco de dados
-* Relatórios
+- [x] Salvar logs de emails recebidos e distribuidos em um arquivo .csv
+- [ ] Salvar logs de emails recebidos e distribuidos em um banco de dados
+- [ ] Melhorar a documentação
+- [ ] Relatórios
 
 
 
