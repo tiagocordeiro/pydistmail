@@ -30,6 +30,15 @@ s.sendmail("vendas@dominio.com.br", vendedores[proximovendedor][1],
            msg.as_string())
 ```
 
+7. Adicione um novo encaminhamento para o email de distribuição.
+
+![Imagem do cPanel](docs/images/cpanel_encaminhadores01.jpg)
+
+8. Encaminhe para o script.
+
+![Imagem do cPanel](docs/images/cpanel_encaminhadores02.jpg)
+
+
 Done.
 
 TODO:
