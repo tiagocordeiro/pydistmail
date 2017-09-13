@@ -101,3 +101,4 @@ ENV/
 .mypy_cache/
 .idea/inspectionProfiles/
 .idea/workspace.xml
+.idea/*
