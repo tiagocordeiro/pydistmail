@@ -36,7 +36,7 @@ fvend.close()
 with open('emails.csv', 'a') as fcsv:  # use o path completo
     mailwriter = csv.writer(fcsv, delimiter=';')
     mailwriter.writerow(
-        [msg['date'], msg['from'], msg['subject'],
+        [msg['date'], msg['subject'], msg['reply-to'],
          vendedores[proximovendedor][0]])
 
 # Encaminha o e-mail para o vendedor da vez.
