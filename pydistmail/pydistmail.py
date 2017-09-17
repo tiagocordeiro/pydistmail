@@ -32,11 +32,17 @@ fvend = open('ultimovendedor.txt', 'w')  # use o path completo
 fvend.write(davez)
 fvend.close()
 
+# Testa se tem um email para resposta.
+if not msg['reply-to']:
+    emailcontato = msg['from']
+else:
+    emailcontato = msg['reply-to']
+
 # Salva log de recebimento em csv
 with open('emails.csv', 'a') as fcsv:  # use o path completo
     mailwriter = csv.writer(fcsv, delimiter=';')
     mailwriter.writerow(
-        [msg['date'], msg['subject'], msg['reply-to'],
+        [msg['date'], msg['subject'], emailcontato,
          vendedores[proximovendedor][0]])
 
 # Encaminha o e-mail para o vendedor da vez.
