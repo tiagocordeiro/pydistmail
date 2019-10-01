@@ -1,10 +1,10 @@
 #!/usr/bin/python
 # coding: utf-8
 
+import csv
 import email
 import smtplib
 import sys
-import csv
 
 # Captura mensagem do stdin via pipe
 msg = email.message_from_file(sys.stdin)
@@ -21,9 +21,9 @@ ultimovendedor = open('ultimovendedor.txt', 'r').read()  # use o path completo
 
 # Determina o próximo vendedor que irá receber e-mail
 if int(ultimovendedor) == totalVendedores - 1:  # Se o ultimo que recebeu, é o
-    proximovendedor = 0                         # ultimo da lista, volta para
-else:                                           # o primeiro da lista.
-    proximovendedor = int(ultimovendedor) + 1   # Se não, pega o próximo.
+    proximovendedor = 0  # ultimo da lista, volta para
+else:  # o primeiro da lista.
+    proximovendedor = int(ultimovendedor) + 1  # Se não, pega o próximo.
 
 davez = str(proximovendedor)
 
