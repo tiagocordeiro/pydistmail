@@ -1,9 +1,8 @@
 #!/usr/bin/python
 # coding: utf-8
 
-import email
 import csv
-
+import email
 
 # Simula a captura de mensagem do stdin via pipe
 emailmock = open("mailmock.txt", "r").read()
@@ -20,7 +19,6 @@ totalVendedores = len(vendedores)
 # Pega o ultimo vendedor que recebeu email
 ultimovendedor = open('ultimovendedor-test.txt', 'r').read()
 
-
 if int(ultimovendedor) == totalVendedores - 1:
     proximovendedor = 0
 else:
@@ -28,11 +26,9 @@ else:
 
 davez = str(proximovendedor)
 
-
 fvend = open('ultimovendedor-test.txt', 'w')
 fvend.write(davez)
 fvend.close()
-
 
 with open('emails-test.csv', 'a') as fcsv:
     mailwriter = csv.writer(fcsv, delimiter=';')
@@ -44,6 +40,7 @@ with open('emails-test.csv', 'a') as fcsv:
 # Simula Encaminhamento do e-mail para o vendedor da vez.
 def envio():
     return 'Enviando o email para o vendedor ' + vendedores[proximovendedor][1]
+
 
 def test_envio():
     assert envio() == str('Enviando o email para o vendedor ' + vendedores[proximovendedor][1])
